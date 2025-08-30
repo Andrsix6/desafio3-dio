@@ -5,21 +5,26 @@ class hero {
     this.tipo = tipo;
   }
 
-  ataque() {
-    let atk;
+  tipe() {
     if (this.tipo == 'mago') {
-      atk = 'magia';
-    } else if (this.tipo == 'guerreiro') {
-      atk = 'espada';
-    } else if (this.tipo == 'monge') {
-      atk = 'artes marciais';
-    } else if (this.tipo == 'ninja') {
-      atk = 'shuriken';
+      return 'magia';
+    } else if (this.tipo === 'guerreiro') {
+      return 'espada';
+    } else if (this.tipo === 'monge') {
+      return 'artes marciais';
+    } else if (this.tipo === 'ninja') {
+      return 'shuriken';
+    } else {
+      return 'ataque indefinido';
     }
+  }
+
+  ataque() {
+    const atk = this.tipe();
     console.log(`O ${this.tipo} atacou usando ${atk}`);
   }
 }
 
-let personagem = new hero('Arthur', '21', 'mago');
+let personagem = new hero('Arthur', 21, 'mago');
 
 personagem.ataque();
